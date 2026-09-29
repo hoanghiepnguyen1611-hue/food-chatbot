@@ -1,0 +1,12 @@
+pandas>=1.5
+numpy>=1.23
+scikit-learn>=1.2
+joblib>=1.2
+Flask>=2.3
+
+# Tùy chọn (khuyến nghị khi triển khai thực tế để tăng độ chính xác NLP tiếng Việt):
+# underthesea>=6.0        # tách từ, gán nhãn từ loại tiếng Việt
+# pyvi>=0.1.1             # tách từ tiếng Việt thay thế
+# transformers>=4.30      # fine-tune PhoBERT/ViSoBERT cho sentiment/ABSA/NLU
+# torch>=2.0
+# rapidfuzz>=3.0          # so khớp gần đúng tên quán / tên món khi người dùng gõ sai

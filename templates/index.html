@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quán Gần Đây — trợ lý tìm quán ăn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Ý TƯỞNG THIẾT KẾ — "Sổ tay đi ăn"
+   Không làm theo khung app giao đồ ăn kiểu SaaS (thẻ bo tròn đều,
+   đổ bóng mềm giống nhau, nút pill). Thay vào đó mô phỏng 3 vật thật
+   ở quán vỉa hè VN: biển hiệu men đỏ chữ vàng, trang vở học sinh kẻ
+   dòng, và phiếu order giấy có mép răng cưa. Câu trả lời của bot nằm
+   thẳng trên trang vở (không có khung bong bóng chat), còn quán ăn
+   hiện ra như phiếu order thật — có số phiếu, đường xé, con dấu.
+   ============================================================ */
+:root{
+  --paper:#EEEAD9;
+  --card:#FBF8EF;
+  --ink:#242A1F;
+  --ink-2:#4E5A44;
+  --muted:#8B9279;
+  --line:#D8D0B4;
+  --rule:rgba(78,90,68,.15);
+  --tape:#E9D48C;
+  --green:#2E6B47;
+  --green-soft:#E1E9D7;
+  --red:#992620;
+  --red-soft:#F0E0D6;
+  --amber:#AD7A22;
+  --amber-soft:#F1E4C4;
+  --chili:#BD421D;
+  --shadow:0 1px 0 rgba(36,42,31,.08);
+  --radius:8px;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171B13; --card:#1E2419; --ink:#ECEEE2; --ink-2:#C2C9B4;
+    --muted:#8D9580; --line:#343B2A; --rule:rgba(255,255,255,.07); --tape:#4E451F;
+    --green:#71BD8F; --green-soft:#20301E; --red:#DE7B6C; --red-soft:#39241D;
+    --amber:#DBAA5C; --amber-soft:#392C15; --chili:#E38A5C;
+    --shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171B13; --card:#1E2419; --ink:#ECEEE2; --ink-2:#C2C9B4;
+  --muted:#8D9580; --line:#343B2A; --rule:rgba(255,255,255,.07); --tape:#4E451F;
+  --green:#71BD8F; --green-soft:#20301E; --red:#DE7B6C; --red-soft:#39241D;
+  --amber:#DBAA5C; --amber-soft:#392C15; --chili:#E38A5C;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.app{
+  max-width:720px; margin:0 auto; height:100dvh;
+  display:flex; flex-direction:column;
+  /* nền trang vở kẻ dòng — thay cho nền phẳng kiểu app */
+  background:
+    repeating-linear-gradient(var(--paper) 0 27px, var(--rule) 27px 28px),
+    var(--paper);
+}
+
+/* ---------------------------------------------------------- biển hiệu quán */
+.topbar{
+  display:flex; align-items:center; gap:11px;
+  padding:15px 16px; padding-top:max(15px,env(safe-area-inset-top));
+  background:var(--red); color:#F6E9C9;
+  position:sticky; top:0; z-index:20;
+  box-shadow:0 2px 0 rgba(0,0,0,.12), inset 0 -3px 0 rgba(0,0,0,.1);
+  background-image:radial-gradient(140% 100% at 15% 0%, rgba(255,255,255,.10), transparent 55%);
+}
+.mark{ flex:none; color:#F6E9C9; display:flex; opacity:.95 }
+.mark svg{width:30px;height:30px;display:block}
+.brand h1{
+  margin:0;font-size:18px;font-weight:800;letter-spacing:0;color:#FBF3DC;
+  font-family:'Be Vietnam Pro',sans-serif;
+}
+.brand p{margin:1px 0 0;font-size:12px;color:#E7C98A; display:flex; align-items:center; gap:5px}
+.brand .area{ color:#FBF3DC; font-weight:700; display:inline-flex; align-items:center; gap:3px }
+.topbar-right{margin-left:auto; display:flex; align-items:center; gap:8px}
+.geo{
+  display:flex; align-items:center; gap:6px;
+  border:1px dashed rgba(246,233,201,.55); background:rgba(0,0,0,.12); color:#F9EFD2;
+  padding:6px 11px 6px 9px; border-radius:3px 9px 3px 9px; font:inherit; font-size:12px;
+  font-weight:600; cursor:pointer; white-space:nowrap; transition:all .15s ease;
+}
+.geo:hover{border-color:#F9EFD2; background:rgba(0,0,0,.2)}
+.geo[data-on="1"]{background:rgba(0,0,0,.22);border-style:solid}
+.geo[data-on="loading"]{opacity:.75}
+.geo .dot{
+  width:6px;height:6px;border-radius:50%;background:#E7C98A;flex:none;
+}
+.geo[data-on="1"] .dot{background:#8FE0B2}
+.geo[data-on="loading"] .dot{background:#F2C879; animation:bob 1s infinite}
+
+/* ------------------------------------------------------------- khung chat */
+#chat{flex:1; overflow-y:auto; padding:20px 18px 8px; scroll-behavior:smooth}
+.row{display:flex; margin-bottom:22px}
+.row.me{justify-content:flex-end}
+
+/* Lời bot: viết thẳng lên trang vở, không có khung bong bóng — chỉ có
+   một gạch dọc màu ở lề trái, như ghi chú viết tay bên lề vở. */
+.bubble{
+  max-width:92%; padding:2px 0 2px 14px; border-left:3px solid var(--green);
+}
+.bubble p{margin:0}
+.bubble strong{font-weight:700}
+.bubble em{font-style:normal;color:var(--green);font-weight:600}
+
+/* Lời người dùng: một mảnh phiếu nhỏ dán băng keo, lệch nhẹ như vừa dán vào vở */
+.row.me .bubble{
+  max-width:80%; border-left:0; padding:10px 14px 9px;
+  background:var(--tape); color:#2B2410; border-radius:2px 9px 9px 9px;
+  box-shadow:var(--shadow); position:relative; transform:rotate(-.6deg);
+}
+:root[data-theme="dark"] .row.me .bubble{color:#F3E7C4}
+.row.me .bubble::before{
+  content:''; position:absolute; top:-7px; right:22px; width:34px; height:14px;
+  background:rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.06);
+  transform:rotate(3deg);
+}
+:root[data-theme="dark"] .row.me .bubble::before{background:rgba(255,255,255,.14)}
+
+/* ------ khối "bot hiểu gì": phần thể hiện năng lực NLU của chatbot ------ */
+.understood{
+  margin-top:9px; padding-top:9px; border-top:1px dashed var(--line);
+}
+.understood .cap{font-size:11.5px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.slots{display:flex;flex-wrap:wrap;gap:6px}
+.slot{
+  font-size:12px; font-weight:600; padding:3px 9px; border-radius:2px 8px 2px 8px;
+  background:var(--green-soft); color:var(--green);
+}
+.note{
+  margin-top:9px;font-size:12.5px;color:var(--ink-2);
+  border-left:3px dashed var(--amber);
+  padding:2px 0 2px 11px;
+}
+
+/* ------------------------------------------------------- phiếu quán ăn */
+.cards{margin-top:14px; display:flex; flex-direction:column; gap:20px}
+.group-label{
+  display:flex; align-items:baseline; gap:8px;
+  font-size:12.5px; font-weight:700; color:var(--ink-2);
+  margin:18px 0 4px; padding-left:2px; font-family:var(--mono); letter-spacing:.01em;
+}
+.group-label::before{content:'—'; color:var(--muted)}
+.group-label::after{content:''; flex:1; height:1px; background:var(--line); align-self:center}
+.card{
+  position:relative;
+  background:var(--card); border:1px solid var(--line); border-radius:3px;
+  box-shadow:4px 5px 0 0 var(--paper), 5px 6px 0 0 var(--line);
+  overflow:hidden; transition:border-color .15s ease;
+}
+.card::before{
+  content:''; position:absolute; top:0; left:16px; right:16px; height:0;
+  border-top:2px dashed var(--line); pointer-events:none;
+}
+@media (hover:hover){ .card:hover{border-color:var(--ink-2)} }
+.card-top{display:flex; gap:12px; padding:14px 12px 12px}
+.thumb{
+  width:86px;height:86px;flex:none;border-radius:3px;overflow:hidden;
+  position:relative; background:var(--green-soft); display:grid; place-items:center;
+}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.thumb .fallback{display:flex;flex-direction:column;align-items:center;gap:2px;
+  text-align:center;padding:4px}
+.thumb .fallback b{font-size:30px;line-height:1}
+.thumb .fallback i{font-style:normal;font-size:9.5px;font-weight:700;color:var(--green);
+  line-height:1.1;max-width:78px;overflow:hidden}
+.rank{
+  position:absolute; top:0; left:0; z-index:1;
+  font-family:var(--mono); font-size:10px; font-weight:600; color:#fff;
+  background:rgba(36,42,31,.82); padding:2px 6px 2px 5px; border-radius:0 0 6px 0;
+}
+.info{min-width:0;flex:1}
+.title{display:flex; align-items:baseline; gap:8px}
+.title h3{
+  margin:0;font-size:15.5px;font-weight:700;letter-spacing:-.01em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.stars{margin-left:auto;font-size:13px;font-weight:700;color:var(--amber);white-space:nowrap;
+  font-family:var(--mono)}
+.stars span{color:var(--muted);font-weight:500;font-size:11px}
+.sub{font-size:12.5px;color:var(--muted);margin:3px 0 8px; display:flex; align-items:center; flex-wrap:wrap}
+.facts{display:flex;flex-wrap:wrap;gap:5px 12px;font-size:13px}
+.fact{display:flex;align-items:center;gap:5px;color:var(--ink-2);font-weight:500}
+.fact b{font-weight:700;color:var(--ink);font-family:var(--mono)}
+.stamp{
+  display:inline-block; font-size:10px; font-weight:800; letter-spacing:.03em;
+  padding:1px 7px 2px; border-radius:2px 7px 2px 7px; border:1.5px solid currentColor;
+  transform:rotate(-3deg); text-transform:uppercase;
+}
+.stamp.open{color:var(--green)}
+.stamp.closed{color:var(--red)}
+
+.tags{display:flex;flex-wrap:wrap;gap:5px;padding:0 12px 10px}
+.tag{
+  font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:2px 6px 2px 6px;
+  background:var(--paper); color:var(--ink-2); border:1px solid var(--line);
+}
+.tag.fit{background:var(--green-soft);color:var(--green);border-color:transparent}
+.tag.warn{background:var(--amber-soft);color:#7A5410;border-color:transparent}
+:root[data-theme="dark"] .tag.warn{color:var(--amber)}
+
+/* thanh đo khẩu vị — điểm nhấn thị giác của thiết kế */
+.why{
+  margin:0 12px 10px; padding:8px 10px; border-left:2px solid var(--line);
+  font-size:12.5px; color:var(--ink-2); line-height:1.45;
+}
+.taste{display:flex;gap:6px 12px;padding:0 12px 12px;flex-wrap:wrap}
+.tmeter{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600}
+.bars{display:flex;gap:2px}
+.bars i{width:9px;height:5px;border-radius:1px;background:var(--line);display:block}
+.bars i.on{background:var(--green)}
+.bars.hot i.on{background:var(--chili)}
+
+.actions{display:flex;gap:0;border-top:1px dashed var(--line)}
+.actions a,.actions button{
+  flex:1; padding:10px 6px; font:inherit; font-size:12.5px; font-weight:700;
+  text-align:center; text-decoration:none; color:var(--ink-2);
+  background:transparent; border:0; border-right:1px dashed var(--line);
+  cursor:pointer;
+}
+.actions>*:last-child{border-right:0}
+.actions a:hover,.actions button:hover{background:var(--green-soft);color:var(--green)}
+.mapwrap{border-top:1px dashed var(--line);display:none}
+.mapwrap.open{display:block}
+.mapwrap iframe{width:100%;height:230px;border:0;display:block}
+
+/* ------------------------------------------------------------ gợi ý + ô nhập */
+.suggest{display:flex;gap:8px;overflow-x:auto;padding:4px 18px 12px;scrollbar-width:none}
+.suggest::-webkit-scrollbar{display:none}
+.chip{
+  flex:none; font:inherit; font-size:12.5px; font-weight:600; cursor:pointer;
+  background:var(--card); color:var(--ink-2); border:1px solid var(--line);
+  padding:7px 12px; border-radius:2px 9px 2px 9px; white-space:nowrap;
+  transition:border-color .15s ease, color .15s ease;
+}
+.suggest .chip:nth-child(odd){transform:rotate(-.4deg)}
+.suggest .chip:nth-child(even){transform:rotate(.4deg)}
+.chip:hover{border-color:var(--green);color:var(--green)}
+.chip:active{opacity:.7}
+
+.composer{
+  display:flex; align-items:center; gap:10px; padding:12px 18px;
+  padding-bottom:max(12px,env(safe-area-inset-bottom));
+  background:var(--card); border-top:2px solid var(--ink);
+}
+.composer input{
+  flex:1; padding:10px 4px; border:0; border-bottom:1.5px solid var(--line);
+  background:transparent; color:var(--ink); font:inherit; font-size:15px; outline:none;
+  border-radius:0;
+}
+.composer input:focus{border-bottom-color:var(--green)}
+.composer input::placeholder{color:var(--muted)}
+.composer button{
+  width:38px;height:38px;flex:none;border:0;border-radius:2px 9px 2px 9px;background:var(--red);
+  color:#F6E9C9;font-size:16px;cursor:pointer;display:grid;place-items:center;
+}
+.composer button:disabled{opacity:.4;cursor:default}
+
+.typing{display:flex;gap:4px;padding:4px 2px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:bob 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bob{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.typing i{animation:none;opacity:.5}}
+
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@media (max-width:420px){
+  .thumb{width:72px;height:72px}
+  .title h3{font-size:14.5px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 14c0-.8.6-1.4 1.4-1.4h17.2c.8 0 1.4.6 1.4 1.4 0 6-4 10.6-9 11.6v1.6h-2v-1.6c-5-1-9-5.6-9-11.6Z"
+              stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M11 12c-.6-1.8-.2-3 1-4.6M16 12c-.9-2.2-.3-3.7 1-5.6M21 12c-.6-1.8-.1-3.2 1-4.6"
+              stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand">
+      <h1>Quán Gần Đây</h1>
+      <p id="brandSub">TP.HCM &amp; Quảng Ngãi, dữ liệu mô phỏng</p>
+    </div>
+    <div class="topbar-right">
+      <button class="geo" id="geoBtn" type="button"><span class="dot"></span>Định vị</button>
+    </div>
+  </header>
+
+  <div id="chat"></div>
+
+  <div class="suggest" id="suggest"></div>
+
+  <form class="composer" id="form">
+    <input id="input" type="text" autocomplete="off" enterkeyhint="send"
+           placeholder="Ví dụ: xôi không quá mặn, dưới 30k, gần tôi">
+    <button type="submit" id="send" aria-label="Gửi">➤</button>
+  </form>
+</div>
+
+<script>
+/* ===========================================================
+   DỮ LIỆU NHÚNG — chỉ có giá trị ở bản demo tĩnh.
+   Khi chạy bằng Flask, biến này là null và chatbot xử lý ở server.
+   =========================================================== */
+const EMBEDDED = null; /*__EMBEDDED_DATA__*/
+
+const chat = document.getElementById('chat');
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const sendBtn = document.getElementById('send');
+const suggestBar = document.getElementById('suggest');
+const geoBtn = document.getElementById('geoBtn');
+const brandSub = document.getElementById('brandSub');
+
+let userLoc = null;
+const DEFAULT_LOC = [10.7725, 106.6980]; // Bến Thành, Q1 — dùng khi trình duyệt từ chối định vị
+
+/* ------------------------------------------------------------- định vị */
+function setBrandArea(text){
+  brandSub.innerHTML = text
+    ? `<span class="area">${esc(text)}</span>`
+    : 'TP.HCM &amp; Quảng Ngãi, dữ liệu mô phỏng';
+}
+
+async function lookupArea(lat, lng){
+  if (!EMBEDDED){
+    try{
+      const r = await fetch(`/api/locate?lat=${lat}&lng=${lng}`);
+      const d = await r.json();
+      if (d && d.area) return d.area;
+    }catch(err){ /* bản demo tĩnh hoặc mất mạng -> bỏ qua, không chặn UI */ }
+  }
+  return null;
+}
+
+async function useLocation(lat, lng, isDefault){
+  userLoc = [lat, lng];
+  geoBtn.dataset.on = '1';
+  geoBtn.innerHTML = `<span class="dot"></span>${isDefault ? 'Vị trí mặc định' : 'Đã định vị'}`;
+  const area = await lookupArea(lat, lng);
+  if (area){
+    geoBtn.innerHTML = `<span class="dot"></span>Gần ${esc(area)}`;
+    setBrandArea(`Đang gợi ý quán gần ${area}`);
+  }
+}
+
+function requestLocation(){
+  if (!navigator.geolocation){
+    geoBtn.innerHTML = '<span class="dot"></span>Máy không hỗ trợ định vị';
+    return;
+  }
+  geoBtn.dataset.on = 'loading';
+  geoBtn.innerHTML = '<span class="dot"></span>Đang định vị…';
+  navigator.geolocation.getCurrentPosition(
+    p => useLocation(p.coords.latitude, p.coords.longitude, false),
+    () => useLocation(DEFAULT_LOC[0], DEFAULT_LOC[1], true),
+    {timeout: 8000}
+  );
+}
+
+geoBtn.addEventListener('click', requestLocation);
+// Tự xin định vị ngay khi mở trang — không cần người dùng phải bấm nút mới
+// dùng được chức năng tìm quán gần đây. Nếu trình duyệt từ chối quyền, bot
+// vẫn hoạt động bình thường mà không cần vị trí.
+requestLocation();
+
+/* ------------------------------------------------------------- tiện ích */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const md = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+                      .replace(/\*(.+?)\*/g,'<em>$1</em>')
+                      .replace(/\n/g,'<br>');
+
+function scrollDown(){ chat.scrollTop = chat.scrollHeight; }
+
+function addUser(text){
+  const row = document.createElement('div');
+  row.className = 'row me';
+  row.innerHTML = `<div class="bubble"><p>${esc(text)}</p></div>`;
+  chat.appendChild(row); scrollDown();
+}
+
+function addTyping(){
+  const row = document.createElement('div');
+  row.className = 'row'; row.id = 'typing';
+  row.innerHTML = `<div class="bubble"><div class="typing"><i></i><i></i><i></i></div></div>`;
+  chat.appendChild(row); scrollDown();
+  return row;
+}
+
+/* thanh đo vị: 5 vạch, tô theo mức 0..1 */
+function meter(label, value, hot){
+  let bars = '';
+  const n = Math.max(1, Math.round(value * 5));
+  for (let i = 0; i < 5; i++) bars += `<i class="${i < n ? 'on' : ''}"></i>`;
+  return `<div class="tmeter">${label}<span class="bars ${hot ? 'hot' : ''}">${bars}</span></div>`;
+}
+
+/* Ảnh hiển thị theo thứ tự ưu tiên:
+   1) photo_url  — ảnh thật của quán (nếu có trong dữ liệu)
+   2) ảnh SVG theo nhóm món, nằm trong project (không phụ thuộc site ngoài)
+   3) ô màu + emoji + tên quán — chỉ khi cả hai đều lỗi                       */
+function imgSources(c){
+  const list = [];
+  if (c.photo_url) list.push(c.photo_url);
+  if (EMBEDDED && EMBEDDED.images && EMBEDDED.images[c.dish_key])
+    list.push('data:image/svg+xml;charset=utf-8,' + encodeURIComponent(EMBEDDED.images[c.dish_key]));
+  if (c.image_url) list.push(c.image_url);
+  return list;
+}
+
+/* Ảnh lỗi thì thử nguồn kế tiếp; hết nguồn thì bỏ ảnh, lộ ô màu + emoji bên dưới */
+function imgFallback(el){
+  const rest = JSON.parse(el.dataset.rest || '[]');
+  if (rest.length){ el.dataset.rest = JSON.stringify(rest.slice(1)); el.src = rest[0]; }
+  else { el.remove(); }
+}
+
+function cardHTML(c, i){
+  const dist = c.distance_text
+      ? `<div class="fact">Cách <b>${esc(c.distance_text)}</b>, khoảng ${c.eta_min} phút</div>` : '';
+  const fitTags = (c.reasons || []).map(r => `<span class="tag fit">${esc(r)}</span>`).join('');
+  const warnTags = (c.warnings || []).map(r => `<span class="tag warn">Lưu ý: ${esc(r)}</span>`).join('');
+  const tasteTags = (c.taste_tags || []).slice(0, 2)
+        .map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  const menu = (c.menu || []).slice(0, 3).join(' · ');
+  const srcs = imgSources(c);
+  const serial = String(i + 1).padStart(2, '0');
+
+  return `
+  <article class="card" id="card-${esc(c.id)}">
+    <div class="card-top">
+      <div class="thumb">
+        <span class="rank">№${serial}</span>
+        <span class="fallback"><b>${c.emoji || '🍽️'}</b><i>${esc(c.dish)}</i></span>
+        ${srcs.length ? `<img src="${esc(srcs[0])}" loading="lazy"
+             alt="Ảnh minh hoạ món ${esc(c.dish)} — ${esc(c.name)}"
+             data-rest='${esc(JSON.stringify(srcs.slice(1)))}'
+             onerror="imgFallback(this)">` : ''}
+      </div>
+      <div class="info">
+        <div class="title">
+          <h3>${esc(c.name)}</h3>
+          <div class="stars">★ ${c.rating.toFixed(1)} <span>(${c.num_reviews})</span></div>
+        </div>
+        <div class="sub">${esc(c.dish)}, ${esc(c.district)}${c.city && c.city !== 'TP.HCM' ? ', ' + esc(c.city) : ''}. Hợp ${c.match_score}%</div>
+        <div class="facts">
+          ${dist}
+          <div class="fact">Giá <b>${esc(c.price_text)}</b></div>
+          <div class="fact">Mở <b>${esc(c.open_time)}–${esc(c.close_time)}</b>
+            <span class="stamp ${c.is_open ? 'open' : 'closed'}">${c.is_open ? 'đang mở' : 'đã đóng'}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags">${fitTags}${warnTags}${tasteTags}
+      ${menu ? `<span class="tag">Có: ${esc(menu)}</span>` : ''}</div>
+
+    ${c.why ? `<p class="why">${esc(c.why)}</p>` : ''}
+
+    <div class="taste">
+      ${meter('Mặn', c.taste.man)}
+      ${meter('Cay', c.taste.cay, true)}
+      ${meter('Ngọt', c.taste.ngot)}
+      ${meter('Béo', c.taste.beo)}
+    </div>
+
+    <div class="actions">
+      <button type="button" onclick="toggleMap('${esc(c.id)}')">Bản đồ</button>
+      <a href="${esc(c.maps_url)}" target="_blank" rel="noopener">Xem quán</a>
+      <a href="${esc(c.directions_url)}" target="_blank" rel="noopener">Chỉ đường</a>
+      <a href="tel:${esc(c.phone)}">Gọi</a>
+    </div>
+    <div class="mapwrap" data-embed="${esc(c.embed_url)}"></div>
+  </article>`;
+}
+
+function toggleMap(id){
+  const card = document.getElementById('card-' + id);
+  const wrap = card.querySelector('.mapwrap');
+  if (wrap.classList.contains('open')) { wrap.classList.remove('open'); return; }
+  if (!wrap.dataset.loaded) {
+    wrap.innerHTML = `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Bản đồ" src="${wrap.dataset.embed}"></iframe>`;
+    wrap.dataset.loaded = '1';
+  }
+  wrap.classList.add('open');
+  setTimeout(() => wrap.scrollIntoView({block:'nearest', behavior:'smooth'}), 60);
+}
+
+function addBot(res){
+  const row = document.createElement('div');
+  row.className = 'row';
+  let html = `<div class="bubble"><p>${md(res.reply)}</p>`;
+
+  if (res.understood && res.understood.length){
+    html += `<div class="understood"><div class="cap">Mình đang lọc theo</div>
+             <div class="slots">` +
+            res.understood.map(s => `<span class="slot">${esc(s.replace(/^[^\p{L}\p{N}]+/u, ""))}</span>`).join('') +
+            `</div></div>`;
+  }
+  (res.notes || []).forEach(n => { html += `<div class="note">${esc(n)}</div>`; });
+  html += `</div>`;
+  row.innerHTML = html;
+
+  // `groups`: khi bot tách riêng "🍜 Món ăn" / "🥤 Đồ uống" thành 2 khối.
+  // Không có groups (trường hợp thường) -> hiển thị 1 khối thẻ như cũ.
+  const groups = (res.groups && res.groups.length) ? res.groups
+      : (res.cards && res.cards.length ? [{label: null, cards: res.cards}] : []);
+
+  const bubble = row.firstChild;
+  groups.forEach(g => {
+    if (g.label){
+      const h = document.createElement('div');
+      h.className = 'group-label';
+      h.textContent = g.label;
+      bubble.appendChild(h);
+    }
+    const holder = document.createElement('div');
+    holder.className = 'cards';
+    holder.innerHTML = g.cards.map(cardHTML).join('');
+    bubble.appendChild(holder);
+  });
+
+  if (res.user_area) setBrandArea(`Đang gợi ý quán gần ${res.user_area}`);
+
+  chat.appendChild(row); scrollDown();
+  renderSuggestions(res.suggestions);
+}
+
+function renderSuggestions(list){
+  suggestBar.innerHTML = '';
+  (list || []).forEach(s => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.type = 'button'; b.textContent = s;
+    b.onclick = () => send(s);
+    suggestBar.appendChild(b);
+  });
+}
+
+/* ------------------------------------------------------------- gửi tin */
+async function send(text){
+  addUser(text);
+  input.value = ''; sendBtn.disabled = true;
+  const t = addTyping();
+  try{
+    const res = EMBEDDED ? await LocalEngine.ask(text, userLoc) : await askServer(text);
+    t.remove(); addBot(res);
+  }catch(err){
+    t.remove();
+    addBot({reply:'Mình không kết nối được tới máy chủ. Kiểm tra lại server rồi thử lại nhé.',
+            cards:[], understood:[], notes:[], suggestions:[]});
+    console.error(err);
+  }
+  sendBtn.disabled = false; input.focus();
+}
+
+async function askServer(text){
+  const r = await fetch('/api/chat', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({message:text, location:userLoc})
+  });
+  return r.json();
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = input.value.trim();
+  if (v) send(v);
+});
+
+/* ------------------------------------------------------------ lời chào */
+addBot({
+  reply: "Chào bạn. Bạn thèm món gì, ở khu nào, tầm giá bao nhiêu thì cứ nói, mình tìm quán cho.\n\n"
+       + "Chưa biết ăn gì thì gõ **tư vấn**, mình hỏi vài câu rồi gợi ý. "
+       + "Quán trong bản này là dữ liệu mô phỏng để thử, không phải quán có thật.",
+  cards: [], understood: [], notes: [],
+  suggestions: ["Xôi không quá mặn, dưới 30k, gần tôi",
+                "Bún bò thật cay ở Quận 1, trên 4 sao",
+                "Tư vấn giúp mình",
+                "Cơm gà và trà sữa gần đây"]
+});
+</script>
+<script id="local-engine">
+/* ===========================================================
+   BỘ MÁY CHẠY PHÍA TRÌNH DUYỆT (chỉ dùng cho bản demo tĩnh).
+   Là bản rút gọn của src/nlu.py + src/restaurant_db.py để bản demo
+   không cần máy chủ. Bản chạy thật dùng mã Python đầy đủ ở server.
+   =========================================================== */
+const LocalEngine = (() => {
+  if (!EMBEDDED) return {ask: async () => ({reply:'', cards:[]})};
+
+  const D = EMBEDDED.restaurants, DISHES = EMBEDDED.dishes, DISTRICTS = EMBEDDED.districts;
+
+  const noAcc = s => s.toLowerCase().normalize('NFD')
+      .replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/\s+/g,' ').trim();
+
+  const REDUCERS = ['khong thich','khong an duoc','khong qua','khong','dung qua','dung',
+                    'it','giam','bot','han che','kieng','so','ngai','tranh','ko','k'];
+  const MIDS = ['vua an','vua phai','vua mieng','vua du','vua'];
+  const AMPS = ['that','cuc','sieu','rat','nhieu','dam','ghien','thich'];
+  const TASTE = {
+    man:{high:['man','dam da','dam vi','nuoc mam'], low:['nhat','lat']},
+    cay:{high:['cay','ot'], low:['khong cay']},
+    ngot:{high:['ngot'], low:['it duong','khong duong','it ngot']},
+    beo:{high:['beo','dau mo','ngay','ngan'], low:['thanh dam','it dau','healthy','eat clean']}
+  };
+  const TASTE_LABEL = {
+    man:{low:'ít mặn / vị vừa',mid:'vị mặn vừa phải',high:'đậm đà, mặn'},
+    cay:{low:'không cay / ít cay',mid:'cay vừa',high:'cay nhiều'},
+    ngot:{low:'ít ngọt',mid:'ngọt vừa',high:'ngọt đậm'},
+    beo:{low:'ít dầu mỡ, thanh đạm',mid:'béo vừa',high:'béo ngậy'}
+  };
+  const NEAR = ['gan day','gan toi','gan cho toi','gan nha','quanh day','xung quanh',
+                'gan nhat','gan minh','o day','loanh quanh'];
+  const UTILS = {
+    'Máy lạnh':['may lanh','dieu hoa'], 'Chỗ đậu xe hơi':['dau xe','do xe hoi','gui xe'],
+    'Giao hàng':['giao hang','ship','mang ve'], 'Nhận đặt bàn':['dat ban','dat cho'],
+    'Wifi mạnh':['wifi','lam viec','laptop','hoc bai'],
+    'Có phòng riêng':['phong rieng','phong vip'],
+    'View đẹp':['view dep','song ao','chup anh','hen ho'],
+    'Mở khuya':['mo khuya','an khuya','dem khuya'],
+    'Phù hợp nhóm đông':['nhom dong','di dong','ca nhom','ban be','lien hoan','tiec'],
+    'Phù hợp gia đình':['gia dinh','ca nha','tre em'],
+    'Bình dân':['binh dan','via he','quan coc']
+  };
+  const MEALS = {'sáng':[7,['an sang','bua sang','buoi sang']],
+                 'trưa':[12,['an trua','bua trua','buoi trua']],
+                 'tối':[19,['an toi','bua toi','buoi toi']],
+                 'khuya':[23,['an khuya','dem khuya','khuya']]};
+
+  const has = (t,p) => new RegExp('(?<![\\w])'+p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\w])').test(t);
+
+  function findDishes(raw){
+    const t = ' '+noAcc(raw)+' ', out = [];
+    for (const d of DISHES){
+      for (const a of d.aliases){
+        if (has(t, noAcc(a))){ out.push(d.key); break; }
+      }
+    }
+    // ưu tiên alias dài nhất (bún bò > bún)
+    return out.length > 1 ? out.slice(0,2) : out;
+  }
+
+  function dir(prefix, suffix, isLow){
+    const red = REDUCERS.some(r => has(prefix,r));
+    const mid = MIDS.some(m => has(prefix,m));
+    const amp = AMPS.some(a => has(prefix,a));
+    const cry = /^\s*(qua|lam|ghe)\b/.test(suffix);
+    if (isLow) return red ? 'high' : 'low';
+    if (red) return 'low';
+    if (mid) return 'mid';
+    if (cry && !amp) return 'low';
+    return 'high';
+  }
+
+  function parseTaste(raw){
+    const res = {};
+    const scan = (text, terms) => {
+      for (const dim in terms){
+        for (const [isLow, list] of [[false, terms[dim].high],[true, terms[dim].low]]){
+          for (const term of list){
+            const re = new RegExp('(?<![\\w])'+term+'(?![\\w])','g');
+            let m;
+            while ((m = re.exec(text))){
+              const p = text.slice(Math.max(0,m.index-32), m.index);
+              const s = text.slice(m.index+term.length, m.index+term.length+14);
+              const d = dir(p, s, isLow);
+              if (!(dim in res) || res[dim]==='high') res[dim] = d;
+            }
+          }
+        }
+      }
+    };
+    scan(' '+noAcc(raw)+' ', TASTE);
+    return res;
+  }
+
+  function parseMoney(t){
+    const out = [];
+    const re = /(\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)\s*(k\b|nghin|ngan|trieu|tr\b|dong|vnd)?/g;
+    let m;
+    while ((m = re.exec(t))){
+      let unit = (m[2]||'').trim(), after = t.slice(re.lastIndex, re.lastIndex+12);
+      const before = t.slice(Math.max(0,m.index-26), m.index);
+      if (!unit){
+        if (/^\s*(sao|quan|cho|nguoi|km|met|m\b|phut|gio|mon|cap|ly|phan|tuoi|nam|lan)/.test(after)) continue;
+        if (!/(gia|duoi|tren|khoang|tam|chi|tu|den|toi da|it nhat|quanh)\s*$/.test(before)) continue;
+      }
+      let v = /^\d{1,3}([.,]\d{3})+$/.test(m[1])
+            ? parseFloat(m[1].replace(/[.,]/g,''))
+            : parseFloat(m[1].replace(',','.'));
+      if (['k','nghin','ngan'].includes(unit)) v *= 1000;
+      else if (['trieu','tr'].includes(unit)) v *= 1e6;
+      else if (v < 1000) v *= 1000;
+      if (v < 3000 || v > 5e6) continue;
+      out.push([v, m.index, re.lastIndex]);
+    }
+    return out;
+  }
+
+  function parse(raw){
+    const t = ' '+noAcc(raw)+' ';
+    const q = {raw, dishes:findDishes(raw), taste:parseTaste(raw), limit:5,
+               priceMin:null, priceMax:null, district:null, nearMe:false, radius:null,
+               minRating:null, openNow:false, atHour:null, meal:null, utils:[], veg:false,
+               city:null};
+
+    // giá
+    const money = parseMoney(t);
+    if (money.length >= 2 && /(den|toi|-|~)/.test(t.slice(money[0][2], money[1][1])) && money[0][0]<money[1][0]){
+      q.priceMin = money[0][0]; q.priceMax = money[1][0];
+    } else if (money.length){
+      const [v,st,en] = money[0];
+      const before = t.slice(Math.max(0,st-26), st);
+      if (/(duoi|khong qua|toi da|it hon|nho hon)\s*$/.test(before)) q.priceMax = v;
+      else if (/(tren|tu|it nhat)\s*$/.test(before)) q.priceMin = v;
+      else if (/(khoang|tam|quanh|gia|chi)\s*$/.test(before)){ q.priceMin = v*0.6; q.priceMax = v*1.25; }
+      else q.priceMax = v;
+    }
+    if (!q.priceMax && ['binh dan','gia re','sinh vien','tiet kiem','re'].some(w=>has(t,w))) q.priceMax = 60000;
+    if (!q.priceMin && ['sang trong','cao cap','sang chanh'].some(w=>has(t,w))) q.priceMin = 150000;
+
+    // thành phố
+    if (['quang ngai','song tra','my khe'].some(w=>t.includes(w))) q.city = 'Quảng Ngãi';
+    else if (['sai gon','tp hcm','ho chi minh','tphcm'].some(w=>t.includes(w))) q.city = 'TP.HCM';
+
+    // khu vực (khớp tên chính thức hoặc tên trước sắp xếp)
+    for (const d of DISTRICTS) {
+      const names = [d.name].concat(d.aliases||[]);
+      if (names.some(n => noAcc(n).length>=5 && t.includes(noAcc(n)))) { q.district = d.name; break; }
+    }
+    if (!q.district){
+      const m = t.match(/\b(?:quan|q)\s*\.?\s*(\d{1,2})\b/);
+      if (m && DISTRICTS.some(d=>d.name==='Quận '+(+m[1]))) q.district = 'Quận '+(+m[1]);
+    }
+
+    // khoảng cách
+    q.nearMe = NEAR.some(p=>has(t,p));
+    const rm = t.match(/(?:trong vong|trong ban kinh|duoi|cach|ban kinh)\s*(\d+(?:[.,]\d+)?)\s*(km|m|met|phut)/);
+    if (rm){
+      const v = parseFloat(rm[1].replace(',','.'));
+      q.radius = rm[2]==='km' ? v : (rm[2]==='phut' ? v*22/60 : v/1000);
+      q.nearMe = true;
+    }
+    if (q.nearMe && !q.radius) q.radius = 3;
+
+    // rating
+    let m2 = t.match(/(?:tren|tu|it nhat)\s*(\d(?:[.,]\d)?)\s*sao/);
+    if (m2) q.minRating = parseFloat(m2[1].replace(',','.'));
+    else if (['danh gia cao','review tot','ngon nhat','tot nhat','top','noi tieng','ngon'].some(w=>has(t,w)))
+      q.minRating = 4.2;
+
+    // số lượng
+    let m3 = t.match(/(\d{1,2})\s*(?:quan|cho|noi|tiem|dia diem)/) || t.match(/top\s*(\d{1,2})/);
+    if (m3) q.limit = Math.min(20, Math.max(1, +m3[1]));
+
+    // giờ
+    q.openNow = ['dang mo','mo cua','gio nay','bay gio','con mo'].some(p=>has(t,p));
+    for (const lb in MEALS) if (MEALS[lb][1].some(p=>has(t,p))){ q.atHour = MEALS[lb][0]; q.meal = lb; break; }
+
+    // tiện ích + chay
+    for (const u in UTILS) if (UTILS[u].some(p=>has(t,p))) q.utils.push(u);
+    q.veg = ['an chay','do chay','quan chay','thuan chay','healthy','eat clean','an kieng','giam can'].some(w=>has(t,w));
+
+    q.intent = (q.dishes.length || Object.keys(q.taste).length || q.priceMax || q.district
+                || q.nearMe || q.utils.length || q.veg || q.minRating || q.city
+                || ['an gi','goi y','tim quan','quan nao','cho nao','o dau','muon an','doi bung'].some(w=>has(t,w)))
+               ? 'SEARCH' : (['xin chao','chao ban','hello','hi','alo'].some(w=>has(t,w)) ? 'GREETING':'FALLBACK');
+    return q;
+  }
+
+  /* ---------- tính điểm ---------- */
+  const R = 6371, DETOUR = 1.25;
+  const rad = d => d*Math.PI/180;
+  function distKm(a,b,c,d){
+    const dp = rad(c-a), dl = rad(d-b);
+    const x = Math.sin(dp/2)**2 + Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(dl/2)**2;
+    return 2*R*Math.asin(Math.sqrt(x))*DETOUR;
+  }
+  const fmtDist = km => km < 1 ? Math.round(km*1000/10)*10+'m' : (km.toFixed(1).replace('.',',')+'km');
+
+  function bandScore(direction, v){
+    if (direction==='low')  return v<=0.42 ? 1 : Math.max(0, 1-(v-0.42)/0.38);
+    if (direction==='high') return v>=0.70 ? 1 : Math.max(0, 1-(0.70-v)/0.40);
+    const d = Math.abs(v-0.5);
+    return d<=0.12 ? 1 : Math.max(0, 1-(d-0.12)/0.23);
+  }
+  const toMin = s => { const [h,m] = s.split(':').map(Number); return h*60+m; };
+  function isOpen(r, mins){
+    const o = toMin(r.open_time), c = toMin(r.close_time);
+    return c<=o ? (mins>=o || mins<=c) : (mins>=o && mins<=c);
+  }
+
+  const ADJ = {man:'giảm mặn', cay:'giảm cay', ngot:'giảm ngọt', beo:'ít dầu mỡ'};
+  const VN  = {man:'mặn', cay:'cay', ngot:'ngọt', beo:'béo/dầu mỡ'};
+  const REASON = {
+    man:{low:'Vị vừa, không quá mặn',mid:'Nêm nếm vừa miệng',high:'Vị đậm đà đúng gu'},
+    cay:{low:'Không cay / cay rất nhẹ',mid:'Cay vừa phải',high:'Cay đã miệng'},
+    ngot:{low:'Ít ngọt, không gắt',mid:'Ngọt cân bằng',high:'Ngọt đậm'},
+    beo:{low:'Thanh đạm, ít dầu mỡ',mid:'Béo vừa phải',high:'Béo ngậy đậm đà'}
+  };
+
+  function search(q, loc){
+    const now = new Date();
+    const mins = q.atHour!=null ? q.atHour*60 : now.getHours()*60+now.getMinutes();
+    const origin = loc || ((q.nearMe||q.radius) ? [10.7725,106.6980] : null);
+    let pool = D, relaxed = [];
+
+    let city = q.city;
+    if (!city && q.district) city = (DISTRICTS.find(d=>d.name===q.district)||{}).city;
+    if (!city && origin){
+      city = origin[0] > 13 ? 'Quảng Ngãi' : 'TP.HCM';
+    }
+    if (city){ const s = pool.filter(r=>r.city===city); if (s.length) pool = s; }
+
+    if (q.dishes.length){ const s = D.filter(r=>q.dishes.includes(r.dish_key)); if (s.length) pool = s; }
+    if (q.veg){ const s = pool.filter(r=>r.is_veg==1||r.category==='Chay – Healthy'); if (s.length>=3) pool = s; }
+    if (q.district){ const s = pool.filter(r=>r.district===q.district);
+      if (s.length) pool = s; else relaxed.push('không có quán phù hợp ngay tại '+q.district); }
+    if (!pool.length) return [[], relaxed];
+
+    let items = pool.map(r => ({r, km: origin ? distKm(origin[0],origin[1],r.lat,r.lng) : null}));
+
+    if (origin && q.radius){
+      const need = Math.max(4, q.limit);
+      let within = items.filter(x=>x.km<=q.radius);
+      if (within.length < need){
+        const cap = Math.min(Math.max(q.radius*3,3), 12);
+        let w = q.radius;
+        while (w < cap && items.filter(x=>x.km<=w).length < need) w = Math.min(w*1.6, cap);
+        w = Math.round(w*10)/10;
+        const wider = items.filter(x=>x.km<=w);
+        if (wider.length){ relaxed.push(`mở rộng bán kính lên ~${w}km vì gần bạn có quá ít quán phù hợp`); within = wider; }
+      }
+      if (within.length) items = within;
+    }
+    if (q.openNow || q.atHour!=null){
+      const open = items.filter(x=>isOpen(x.r, mins));
+      if (open.length >= Math.max(3,q.limit)) items = open;
+      else relaxed.push('ít quán đang mở vào giờ này nên mình liệt kê cả quán sắp mở');
+    }
+
+    const scored = items.map(({r, km}) => {
+      const parts = [], ws = [], reasons = [], warns = [];
+      const tkeys = Object.keys(q.taste);
+      if (tkeys.length){
+        let sum = 0;
+        for (const dim of tkeys){
+          const v = r['taste_'+dim], d = q.taste[dim];
+          let s = bandScore(d, v);
+          const canAdj = (r.adjustable||'').includes(ADJ[dim]);
+          if (d==='low' && canAdj) s = Math.min(1, s+0.12);
+          if (s>=0.85) reasons.push(d==='low'&&canAdj&&v>0.48 ? 'Có thể yêu cầu '+ADJ[dim] : REASON[dim][d]);
+          else if (s<0.45) warns.push(canAdj&&d==='low'
+                ? `Vị ${VN[dim]} khá đậm, nhưng quán nhận yêu cầu ${ADJ[dim]}`
+                : `Lưu ý: quán này vị ${VN[dim]} ${d==='low'?'khá đậm':'khá nhẹ'}`);
+          sum += s;
+        }
+        parts.push(sum/tkeys.length); ws.push(0.45);
+      }
+      if (km!=null){ parts.push(Math.exp(-km/Math.max(q.radius||3,0.6))); ws.push(0.24); }
+      const conf = Math.min(1, Math.log10(r.num_reviews+1)/2.6);
+      parts.push(Math.max(0,Math.min(1,(r.rating-2.5)/2.5*(0.65+0.35*conf)))); ws.push(0.22);
+
+      if (q.priceMin || q.priceMax){
+        const lo = r.price_min, hi = r.price_max;
+        const wl = q.priceMin||0, wh = q.priceMax||1e9;
+        const ov = Math.min(hi,wh) - Math.max(lo,wl);
+        let s;
+        if (ov <= 0){ const gap = lo>wh ? lo-wh : wl-hi; s = Math.max(0, 1-gap/Math.max(wh,30000)); }
+        else { s = 0.55 + 0.45*Math.min(1, ov/Math.max(hi-lo,1)); if (q.priceMax && hi<=q.priceMax) s = Math.min(1,s+0.12); }
+        parts.push(s); ws.push(0.16);
+        if (q.priceMax && lo <= q.priceMax) reasons.push(`Giá từ ${Math.round(lo/1000)}k, nằm trong ngân sách`);
+      }
+      if (q.utils.length){
+        const have = q.utils.filter(u => (r.utilities||'').includes(u));
+        parts.push(have.length/q.utils.length); ws.push(0.08);
+        if (have.length) reasons.push(have.join(' · '));
+      }
+      let score = parts.reduce((a,p,i)=>a+p*ws[i],0) / ws.reduce((a,b)=>a+b,0);
+      if (q.minRating && r.rating < q.minRating) score *= 0.55;
+      if (q.priceMax && r.price_min > q.priceMax*1.15){
+        score *= 0.6;
+        warns.push(`Giá khởi điểm ${Math.round(r.price_min/1000)}k, cao hơn ngân sách bạn nêu`);
+      }
+      return {r, km, score, reasons, warns};
+    });
+
+    scored.sort((a,b)=>b.score-a.score);
+    const cards = scored.slice(0, q.limit).map(({r,km,score,reasons,warns}) => ({
+      id:r.restaurant_id, name:r.name, dish:r.dish_name, dish_key:r.dish_key,
+      city:r.city, district:r.district, photo_url:r.photo_url||'',
+      address:r.address, rating:r.rating, num_reviews:r.num_reviews,
+      price_text:`${Math.round(r.price_min/1000)}k – ${Math.round(r.price_max/1000)}k`,
+      taste:{man:r.taste_man, cay:r.taste_cay, ngot:r.taste_ngot, beo:r.taste_beo},
+      taste_tags:String(r.taste_tags).split('|').map(s=>s.trim()),
+      menu:String(r.menu).split('|').map(s=>s.trim()),
+      open_time:r.open_time, close_time:r.close_time, is_open:isOpen(r,mins),
+      phone:r.phone, image_url:r.image_url, emoji:r.emoji,
+      distance_km: km!=null ? Math.round(km*100)/100 : null,
+      distance_text: km!=null ? fmtDist(km) : null,
+      eta_min: km!=null ? Math.max(1, Math.round(km/22*60)) : null,
+      match_score: Math.round(score*100),
+      reasons: reasons.slice(0,3), warnings: warns.slice(0,2),
+      maps_url:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+', '+r.address)}&center=${r.lat},${r.lng}`,
+      directions_url:`https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=two-wheeler`
+                     + (origin ? `&origin=${origin[0]},${origin[1]}` : ''),
+      embed_url:`https://maps.google.com/maps?q=${r.lat},${r.lng}&z=17&output=embed`
+    })).map(c => ({...c, why: buildWhy(c)}));
+    return [cards, relaxed];
+  }
+
+  function buildWhy(c){
+    const parts = ['đúng món ' + c.dish.toLowerCase()];
+    c.reasons.forEach(r => parts.push(r[0].toLowerCase() + r.slice(1)));
+    if (c.distance_text) parts.push('cách bạn ' + c.distance_text);
+    if (c.rating >= 4.3) parts.push(`được chấm ${c.rating}/5 từ ${c.num_reviews} lượt`);
+    const head = 'Gợi ý vì ' + parts.slice(0,4).join(', ') + '.';
+    return c.warnings.length ? head + ' ' + c.warnings[0] + '.' : head;
+  }
+
+  function explain(q){
+    const out = [];
+    if (q.dishes.length) out.push('🍜 Món: '+q.dishes.map(k=>DISHES.find(d=>d.key===k).name).join(', '));
+    for (const dim in q.taste) out.push('🧂 Khẩu vị: '+TASTE_LABEL[dim][q.taste[dim]]);
+    if (q.veg) out.push('🥬 Ưu tiên: món chay / healthy');
+    if (q.priceMin && q.priceMax) out.push(`💰 Giá: ${Math.round(q.priceMin/1000)}k – ${Math.round(q.priceMax/1000)}k`);
+    else if (q.priceMax) out.push(`💰 Giá: dưới ${Math.round(q.priceMax/1000)}k`);
+    else if (q.priceMin) out.push(`💰 Giá: trên ${Math.round(q.priceMin/1000)}k`);
+    if (q.nearMe) out.push(`📍 Vị trí: gần bạn${q.radius?` (trong ${q.radius}km)`:''}`);
+    if (q.district) out.push('📍 Khu vực: '+q.district);
+    else if (q.city) out.push('📍 Thành phố: '+q.city);
+    if (q.minRating) out.push(`⭐ Đánh giá: từ ${q.minRating.toFixed(1)} sao`);
+    if (q.openNow) out.push('🕐 Đang mở cửa'); else if (q.meal) out.push('🕐 Bữa: '+q.meal);
+    if (q.utils.length) out.push('✨ Tiện ích: '+q.utils.join(', '));
+    return out;
+  }
+
+  const TIPS = ["xôi không quá mặn, dưới 30k, gần tôi",
+                "bún bò thật cay ở Quận 1, trên 4 sao",
+                "quán lẩu đi nhóm đông, có máy lạnh, tầm 300k",
+                "cơm trưa bình dân đang mở cửa"];
+
+  async function ask(text, loc){
+    const q = parse(text);
+    if (q.intent === 'GREETING')
+      return {reply:'Xin chào! 👋 Bạn muốn ăn gì hôm nay? Cứ nói tự nhiên, mình hiểu được cả khẩu vị lẫn ngân sách.',
+              cards:[], understood:[], notes:[], suggestions:TIPS};
+    if (q.intent === 'FALLBACK')
+      return {reply:'Mình chưa hiểu rõ ý bạn 🤔. Bạn thử nói cụ thể hơn xem, ví dụ:',
+              cards:[], understood:[], notes:[], suggestions:TIPS};
+
+    const [cards, relaxed] = search(q, loc);
+    if (!cards.length)
+      return {reply:'Mình chưa tìm được quán nào khớp hết các tiêu chí bạn đưa ra 😥 Thử nới một điều kiện xem sao.',
+              cards:[], understood:explain(q), notes:[], suggestions:TIPS};
+
+    const dish = q.dishes.length ? DISHES.find(d=>d.key===q.dishes[0]).name : 'quán ăn';
+    let head = `${cards[0].emoji} Mình tìm được **${cards.length} quán ${dish.toLowerCase()}** phù hợp`;
+    if (Object.keys(q.taste).length) head += ' với khẩu vị bạn mô tả';
+    if (q.nearMe) head += ', sắp xếp theo độ phù hợp và khoảng cách';
+    head += ':';
+
+    const sugg = [];
+    sugg.push(q.priceMax ? 'Có quán nào rẻ hơn không?' : 'Lọc giúp mình dưới 50k');
+    sugg.push(q.nearMe ? 'Tìm quán gần hơn nữa' : 'Quán nào gần tôi nhất?');
+    if (!q.openNow) sugg.push('Chỉ hiện quán đang mở cửa');
+    sugg.push('Đổi sang '+DISHES[Math.floor(Math.random()*DISHES.length)].name.toLowerCase()+' thì sao?');
+
+    return {reply:head, cards, understood:explain(q),
+            notes: relaxed.map(r => 'ℹ️ Mình đã '+r), suggestions:sugg};
+  }
+
+  return {ask};
+})();
+</script>
+</body>
+</html>

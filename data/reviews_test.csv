@@ -1,0 +1,801 @@
+﻿review_text,label,style
+"Tính tiền cao hơn giá niêm yết trên menu. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ. nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Nhân viên vừa nghe điện thoại vừa bưng bê.,tiêu_cực,chuẩn
+"Mùi dầu chiên đi chiên lại rất gắt. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi. ăn xong còn muốn gọi thêm phần nữa.",tích_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+Đáng để chạy xe xa một chút. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. tạm ổn cho một bữa trưa vội.",trung_tính,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi. chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+Tạm ổn cho một bữa trưa vội. không dở nhưng cũng chưa tới mức muốn giới thiệu.,trung_tính,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. chất lượng vượt mong đợi của mình.",tích_cực,chuẩn
+"Ăn xong còn muốn gọi thêm phần nữa. chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+Bạn bè mình ai ăn cũng gật gù. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. đáng để chạy xe xa một chút.,tích_cực,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Đồ ăn ra nhanh, nóng hổi. chất lượng vượt mong đợi của mình.",tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Bình thường như bao quán khác trong khu. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+"Đợi gần bốn mươi phút mới có đồ ăn. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+"Bàn còn dính dầu mỡ của khách trước. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. lần thứ ba mình quay lại và vẫn ổn.",tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Mức giá và chất lượng coi như hòa. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Mức giá và chất lượng coi như hòa. được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. không dở nhưng cũng chưa tới mức muốn giới thiệu.",trung_tính,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. ăn xong còn muốn gọi thêm phần nữa.",tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Không dở nhưng cũng chưa tới mức muốn giới thiệu.,trung_tính,chuẩn
+Không dở nhưng cũng chưa tới mức muốn giới thiệu. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Bạn bè mình ai ăn cũng gật gù. nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+Nhân viên vừa nghe điện thoại vừa bưng bê. đợi gần bốn mươi phút mới có đồ ăn.,tiêu_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Đáng để chạy xe xa một chút. nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Đáng để chạy xe xa một chút. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ. chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Chất lượng vượt mong đợi của mình. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Đáng để chạy xe xa một chút. giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Ăn xong về bụng khó chịu cả tối. chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Đợi gần bốn mươi phút mới có đồ ăn. tính tiền cao hơn giá niêm yết trên menu.,tiêu_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Mức giá và chất lượng coi như hòa. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Chỗ để xe không có, phải gửi xa. tính tiền cao hơn giá niêm yết trên menu.",tiêu_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. đáng để chạy xe xa một chút.",tích_cực,chuẩn
+Gọi mãi không ai ra ghi món. mùi dầu chiên đi chiên lại rất gắt.,tiêu_cực,chuẩn
+"Bình thường như bao quán khác trong khu. được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Lần thứ ba mình quay lại và vẫn ổn. nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+Tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+Đợi gần bốn mươi phút mới có đồ ăn. tính tiền cao hơn giá niêm yết trên menu.,tiêu_cực,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật. được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Mức giá và chất lượng coi như hòa. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Mức giá và chất lượng coi như hòa. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Giá này mà được chừng này thì quá hời. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu.,tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước. gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. chất lượng vượt mong đợi của mình.",tích_cực,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật. được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+"Chất lượng vượt mong đợi của mình. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Đợi gần bốn mươi phút mới có đồ ăn. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+"Ăn xong còn muốn gọi thêm phần nữa. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+"Chỗ để xe không có, phải gửi xa. ăn xong về bụng khó chịu cả tối.",tiêu_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+Mùi dầu chiên đi chiên lại rất gắt. đợi gần bốn mươi phút mới có đồ ăn.,tiêu_cực,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. mùi dầu chiên đi chiên lại rất gắt.",tiêu_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước. tính tiền cao hơn giá niêm yết trên menu.,tiêu_cực,chuẩn
+"Đáng để chạy xe xa một chút. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Đáng để chạy xe xa một chút. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+"Ngồi cả buổi mà vẫn thấy thoải mái. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi. ăn xong về bụng khó chịu cả tối.",tiêu_cực,chuẩn
+"Đợi gần bốn mươi phút mới có đồ ăn. thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+"Đợi gần bốn mươi phút mới có đồ ăn. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối. mùi dầu chiên đi chiên lại rất gắt.,tiêu_cực,chuẩn
+Mức giá và chất lượng coi như hòa. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi. bàn còn dính dầu mỡ của khách trước.",tiêu_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối. phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi. ăn xong còn muốn gọi thêm phần nữa.",tích_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối. mùi dầu chiên đi chiên lại rất gắt.,tiêu_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù. giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+Đợi gần bốn mươi phút mới có đồ ăn.,tiêu_cực,chuẩn
+Không dở nhưng cũng chưa tới mức muốn giới thiệu. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước. nhân viên vừa nghe điện thoại vừa bưng bê.,tiêu_cực,chuẩn
+Chất lượng vượt mong đợi của mình. giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu. phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+"Giá này mà được chừng này thì quá hời. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. lần thứ ba mình quay lại và vẫn ổn.",tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối. nhân viên vừa nghe điện thoại vừa bưng bê.,tiêu_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Tạm ổn cho một bữa trưa vội. bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+"Bạn bè mình ai ăn cũng gật gù. chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+Mùi dầu chiên đi chiên lại rất gắt.,tiêu_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+Tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Ăn được, không có gì để chê mà cũng không có gì nổi bật. được cái tiện đường, còn lại thì trung bình.",trung_tính,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Tạm ổn cho một bữa trưa vội. bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Ngồi cả buổi mà vẫn thấy thoải mái. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối.,tiêu_cực,chuẩn
+"Thịt dai nhách, nhai không nổi. mùi dầu chiên đi chiên lại rất gắt.",tiêu_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối.,tiêu_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu. gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+Đáng để chạy xe xa một chút. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa. không dở nhưng cũng chưa tới mức muốn giới thiệu.,trung_tính,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình.",tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình. bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Phần ăn teo tóp so với ảnh quảng cáo. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+"Ăn xong về bụng khó chịu cả tối. lần trước còn được, lần này xuống dốc hẳn.",tiêu_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Không dở nhưng cũng chưa tới mức muốn giới thiệu. ăn được, không có gì để chê mà cũng không có gì nổi bật.",trung_tính,chuẩn
+"Rau sống tươi rói, sạch sẽ. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+Chất lượng vượt mong đợi của mình. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. ăn xong về bụng khó chịu cả tối.",tiêu_cực,chuẩn
+"Chỗ để xe không có, phải gửi xa.",tiêu_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. nhân viên vừa nghe điện thoại vừa bưng bê.",tiêu_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu. phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Đáng để chạy xe xa một chút. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. tạm ổn cho một bữa trưa vội.",trung_tính,chuẩn
+"Đợi gần bốn mươi phút mới có đồ ăn. thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+"Đồ ăn ra nhanh, nóng hổi. ngồi cả buổi mà vẫn thấy thoải mái.",tích_cực,chuẩn
+"Bàn còn dính dầu mỡ của khách trước. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Giá này mà được chừng này thì quá hời. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Đợi gần bốn mươi phút mới có đồ ăn. nhân viên vừa nghe điện thoại vừa bưng bê.,tiêu_cực,chuẩn
+Phần ăn teo tóp so với ảnh quảng cáo.,tiêu_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Ăn xong về bụng khó chịu cả tối.,tiêu_cực,chuẩn
+Giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. giá này mà được chừng này thì quá hời.",tích_cực,chuẩn
+"Tô đầy đặn, ăn no căng bụng.",tích_cực,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. ngồi cả buổi mà vẫn thấy thoải mái.",tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+Tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. ngồi cả buổi mà vẫn thấy thoải mái.",tích_cực,chuẩn
+Giá này mà được chừng này thì quá hời. ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+Không dở nhưng cũng chưa tới mức muốn giới thiệu. tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+Đáng để chạy xe xa một chút. chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+Mức giá và chất lượng coi như hòa.,trung_tính,chuẩn
+"Rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Đáng để chạy xe xa một chút. ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn.",tích_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu. ăn xong về bụng khó chịu cả tối.,tiêu_cực,chuẩn
+Mức giá và chất lượng coi như hòa. không dở nhưng cũng chưa tới mức muốn giới thiệu.,trung_tính,chuẩn
+"Đồ ăn ra nhanh, nóng hổi.",tích_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa. đợi gần bốn mươi phút mới có đồ ăn.",tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+Đáng để chạy xe xa một chút. giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+Bạn bè mình ai ăn cũng gật gù.,tích_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu. gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. ăn xong còn muốn gọi thêm phần nữa.",tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+Đáng để chạy xe xa một chút.,tích_cực,chuẩn
+Tính tiền cao hơn giá niêm yết trên menu.,tiêu_cực,chuẩn
+Ngồi cả buổi mà vẫn thấy thoải mái. lần thứ ba mình quay lại và vẫn ổn.,tích_cực,chuẩn
+"Chỗ để xe không có, phải gửi xa. bàn còn dính dầu mỡ của khách trước.",tiêu_cực,chuẩn
+Gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+"Nước chấm pha khéo, điểm cộng lớn. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+"Giá này mà được chừng này thì quá hời. rau sống tươi rói, sạch sẽ.",tích_cực,chuẩn
+Bình thường như bao quán khác trong khu.,trung_tính,chuẩn
+"Lần trước còn được, lần này xuống dốc hẳn. thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Gọi mãi không ai ra ghi món.,tiêu_cực,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+"Nhân viên vừa nghe điện thoại vừa bưng bê. thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+Chất lượng vượt mong đợi của mình.,tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Tạm ổn cho một bữa trưa vội.,trung_tính,chuẩn
+"Đồ ăn ra nhanh, nóng hổi. ngồi cả buổi mà vẫn thấy thoải mái.",tích_cực,chuẩn
+Ăn xong về bụng khó chịu cả tối.,tiêu_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+Chất lượng vượt mong đợi của mình. giá này mà được chừng này thì quá hời.,tích_cực,chuẩn
+"Được cái tiện đường, còn lại thì trung bình. không dở nhưng cũng chưa tới mức muốn giới thiệu.",trung_tính,chuẩn
+Bàn còn dính dầu mỡ của khách trước.,tiêu_cực,chuẩn
+Lần thứ ba mình quay lại và vẫn ổn. ngồi cả buổi mà vẫn thấy thoải mái.,tích_cực,chuẩn
+"Thất vọng, chắc không quay lại nữa.",tiêu_cực,chuẩn
+"Chủ quán nhớ mặt khách, chào hỏi thân tình. bạn bè mình ai ăn cũng gật gù.",tích_cực,chuẩn
+"Thịt dai nhách, nhai không nổi.",tiêu_cực,chuẩn
+Ăn xong còn muốn gọi thêm phần nữa.,tích_cực,chuẩn
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Không có gì để phàn nàn.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Không hề bị ngán dù ăn hết tô.,tích_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+Không đáng đồng tiền chút nào.,tiêu_cực,phủ định
+Không chê vào đâu được.,tích_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Nói thật là không hợp khẩu vị mình.,tiêu_cực,phủ định
+Chẳng phải chờ lâu như mình lo.,tích_cực,phủ định
+Không ngon như lời đồn.,tiêu_cực,phủ định
+Chẳng có gì đặc sắc cả.,tiêu_cực,phủ định
+Không đắt như mình tưởng ban đầu.,tích_cực,phủ định
+Chưa bao giờ thấy quán nào phục vụ chậm như vậy.,tiêu_cực,phủ định
+Không hiểu sao nhiều người khen.,tiêu_cực,phủ định
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Đồ ăn khá ngon, nhưng phục vụ thì chậm.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Vị ổn, mà lần này nêm hơi tay.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+"Quán sạch sẽ mát mẻ, tiếc là giá hơi chát.",trung_tính,lẫn lộn
+"Nhân viên dễ thương, món thì chỉ ở mức tạm.",trung_tính,lẫn lộn
+"Giá mềm, bù lại chỗ ngồi hơi chật.",trung_tính,lẫn lộn
+tạm ổn cho một bữa trưa vội,trung_tính,không dấu/teencode
+chất lượng vượt mong đợi của mk,tích_cực,không dấu/teencode
+nhân viên vừa nghe điện thoại vừa bưng bê,tiêu_cực,không dấu/teencode
+"đồ ăn ra nhanh, nóng hổi",tích_cực,không dấu/teencode
+"to day dan, an no cang bung",tích_cực,không dấu/teencode
+gọi mãi ko ai ra ghi món,tiêu_cực,không dấu/teencode
+ban be minh ai an cung gat gu,tích_cực,không dấu/teencode
+doi gan bon muoi phut moi co do an,tiêu_cực,không dấu/teencode
+"to day dan, an no cang bung",tích_cực,không dấu/teencode
+"duoc cai tien duong, con lai thi trung binh",trung_tính,không dấu/teencode
+gia nay ma duoc chung nay thi qua hoi,tích_cực,không dấu/teencode
+chất lượng vượt mong đợi của mk,tích_cực,không dấu/teencode
+ăn xong về bụng khó chịu cả tối,tiêu_cực,không dấu/teencode
+nhan vien vua nghe dien thoai vua bung be,tiêu_cực,không dấu/teencode
+lần thứ ba mk quay lại và vẫn ổn,tích_cực,không dấu/teencode
+"rau song tuoi roi, sach se",tích_cực,không dấu/teencode
+khong do nhung cung chua toi muc muon gioi thieu,trung_tính,không dấu/teencode
+bình thường như bao wan khác trong khu,trung_tính,không dấu/teencode
+"thit dai nhach, nhai khong noi",tiêu_cực,không dấu/teencode
+"duoc cai tien duong, con lai thi trung binh",trung_tính,không dấu/teencode
+tam on cho mot bua trua voi,trung_tính,không dấu/teencode
+ko dở nhg cũng chưa tới mức muốn giới thiệu,trung_tính,không dấu/teencode
+goi mai khong ai ra ghi mon,tiêu_cực,không dấu/teencode
+đợi gần bốn mươi phút mới có đồ ăn,tiêu_cực,không dấu/teencode
+"to day dan, an no cang bung",tích_cực,không dấu/teencode
+"ăn dc, ko có j để chê mà cũng ko có j nổi bật",trung_tính,không dấu/teencode
+phan an teo top so voi anh quang cao,tiêu_cực,không dấu/teencode
+"lan truoc con duoc, lan nay xuong doc han",tiêu_cực,không dấu/teencode
+"rau song tuoi roi, sach se",tích_cực,không dấu/teencode
+mùi dầu chiên đi chiên lại rat gắt,tiêu_cực,không dấu/teencode
+"chỗ để xe ko có, phải gửi xa",tiêu_cực,không dấu/teencode
+nhân viên vừa nghe điện thoại vừa bưng bê,tiêu_cực,không dấu/teencode
+"đồ ăn ra nhanh, nóng hổi",tích_cực,không dấu/teencode
+lần thứ ba mk quay lại và vẫn ổn,tích_cực,không dấu/teencode
+"lần trước còn dc, lần này xuống dốc hẳn",tiêu_cực,không dấu/teencode
+ngoi ca buoi ma van thay thoai mai,tích_cực,không dấu/teencode
+an xong ve bung kho chiu ca toi,tiêu_cực,không dấu/teencode
+nhân viên vừa nghe điện thoại vừa bưng bê,tiêu_cực,không dấu/teencode
+"chỗ để xe ko có, phải gửi xa",tiêu_cực,không dấu/teencode
+tạm ổn cho một bữa trưa vội,trung_tính,không dấu/teencode
+"an duoc, khong co gi de che ma cung khong co gi noi bat",trung_tính,không dấu/teencode
+"ăn dc, ko có j để chê mà cũng ko có j nổi bật",trung_tính,không dấu/teencode
+khong do nhung cung chua toi muc muon gioi thieu,trung_tính,không dấu/teencode
+đáng để chạy xe xa một chút,tích_cực,không dấu/teencode
+chất lượng vượt mong đợi của mk,tích_cực,không dấu/teencode
+"to day dan, an no cang bung",tích_cực,không dấu/teencode
+"duoc cai tien duong, con lai thi trung binh",trung_tính,không dấu/teencode
+đáng để chạy xe xa một chút,tích_cực,không dấu/teencode
+an xong con muon goi them phan nua,tích_cực,không dấu/teencode
+"duoc cai tien duong, con lai thi trung binh",trung_tính,không dấu/teencode
+mùi dầu chiên đi chiên lại rat gắt,tiêu_cực,không dấu/teencode
+"tô đầy đặn, ăn no căng bụng",tích_cực,không dấu/teencode
+"thịt dai nhách, nhai ko nổi",tiêu_cực,không dấu/teencode
+"cho de xe khong co, phai gui xa",tiêu_cực,không dấu/teencode
+doi gan bon muoi phut moi co do an,tiêu_cực,không dấu/teencode
+lần thứ ba mk quay lại và vẫn ổn,tích_cực,không dấu/teencode
+mức giá và chất lượng coi như hòa,trung_tính,không dấu/teencode
+mui dau chien di chien lai rat gat,tiêu_cực,không dấu/teencode
+"dc cái tiện đường, còn lại thì trung bình",trung_tính,không dấu/teencode
+lần thứ ba mk quay lại và vẫn ổn,tích_cực,không dấu/teencode
+khong do nhung cung chua toi muc muon gioi thieu,trung_tính,không dấu/teencode
+"rau song tuoi roi, sach se",tích_cực,không dấu/teencode
+ko dở nhg cũng chưa tới mức muốn giới thiệu,trung_tính,không dấu/teencode
+đợi gần bốn mươi phút mới có đồ ăn,tiêu_cực,không dấu/teencode
+"do an ra nhanh, nong hoi",tích_cực,không dấu/teencode
+"duoc cai tien duong, con lai thi trung binh",trung_tính,không dấu/teencode
+tam on cho mot bua trua voi,trung_tính,không dấu/teencode
+chat luong vuot mong doi cua minh,tích_cực,không dấu/teencode
+đợi gần bốn mươi phút mới có đồ ăn,tiêu_cực,không dấu/teencode
+tinh tien cao hon gia niem yet tren menu,tiêu_cực,không dấu/teencode
+"do an ra nhanh, nong hoi",tích_cực,không dấu/teencode
+"ăn dc, ko có j để chê mà cũng ko có j nổi bật",trung_tính,không dấu/teencode
+nhan vien vua nghe dien thoai vua bung be,tiêu_cực,không dấu/teencode
+"an duoc, khong co gi de che ma cung khong co gi noi bat",trung_tính,không dấu/teencode
+mức giá và chất lượng coi như hòa,trung_tính,không dấu/teencode
+bạn bè mk ai ăn cũng gật gù,tích_cực,không dấu/teencode
+ăn xong còn muốn gọi thêm phần nữa,tích_cực,không dấu/teencode
+"tô đầy đặn, ăn no căng bụng",tích_cực,không dấu/teencode
+bạn bè mk ai ăn cũng gật gù,tích_cực,không dấu/teencode
+mùi dầu chiên đi chiên lại rat gắt,tiêu_cực,không dấu/teencode
+bình thường như bao wan khác trong khu,trung_tính,không dấu/teencode
+ngồi cả buổi mà vẫn thấy thoải mái,tích_cực,không dấu/teencode
+bình thường như bao wan khác trong khu,trung_tính,không dấu/teencode
+"ăn dc, ko có j để chê mà cũng ko có j nổi bật",trung_tính,không dấu/teencode
+mùi dầu chiên đi chiên lại rat gắt,tiêu_cực,không dấu/teencode
+"đồ ăn ra nhanh, nóng hổi",tích_cực,không dấu/teencode
+"đồ ăn ra nhanh, nóng hổi",tích_cực,không dấu/teencode
+"tô đầy đặn, ăn no căng bụng",tích_cực,không dấu/teencode
+nhân viên vừa nghe điện thoại vừa bưng bê,tiêu_cực,không dấu/teencode
+"that vong, chac khong quay lai nua",tiêu_cực,không dấu/teencode
+phan an teo top so voi anh quang cao,tiêu_cực,không dấu/teencode
+ăn xong về bụng khó chịu cả tối,tiêu_cực,không dấu/teencode
+"cho de xe khong co, phai gui xa",tiêu_cực,không dấu/teencode
+tạm ổn cho một bữa trưa vội,trung_tính,không dấu/teencode
+đáng để chạy xe xa một chút,tích_cực,không dấu/teencode
+"rau song tuoi roi, sach se",tích_cực,không dấu/teencode
+an xong ve bung kho chiu ca toi,tiêu_cực,không dấu/teencode
+tạm ổn cho một bữa trưa vội,trung_tính,không dấu/teencode
+"chu quan nho mat khach, chao hoi than tinh",tích_cực,không dấu/teencode
+ăn xong về bụng khó chịu cả tối,tiêu_cực,không dấu/teencode
+"do an ra nhanh, nong hoi",tích_cực,không dấu/teencode
+"do an ra nhanh, nong hoi",tích_cực,không dấu/teencode
+phan an teo top so voi anh quang cao,tiêu_cực,không dấu/teencode
+khong do nhung cung chua toi muc muon gioi thieu,trung_tính,không dấu/teencode
+"đồ ăn ra nhanh, nóng hổi",tích_cực,không dấu/teencode
+"tô đầy đặn, ăn no căng bụng",tích_cực,không dấu/teencode
+"thit dai nhach, nhai khong noi",tiêu_cực,không dấu/teencode
+ko dở nhg cũng chưa tới mức muốn giới thiệu,trung_tính,không dấu/teencode
+nhân viên vừa nghe điện thoại vừa bưng bê,tiêu_cực,không dấu/teencode
+muc gia va chat luong coi nhu hoa,trung_tính,không dấu/teencode
+chán,tiêu_cực,câu ngắn
+bình thường,trung_tính,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+ngon,tích_cực,câu ngắn
+một sao,tiêu_cực,câu ngắn
+không ưng,tiêu_cực,câu ngắn
+so so,trung_tính,câu ngắn
+trung bình,trung_tính,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+dở,tiêu_cực,câu ngắn
+bình thường,trung_tính,câu ngắn
+ưng,tích_cực,câu ngắn
+ok nha,tích_cực,câu ngắn
+so so,trung_tính,câu ngắn
+ok nha,tích_cực,câu ngắn
+dở,tiêu_cực,câu ngắn
+trung bình,trung_tính,câu ngắn
+so so,trung_tính,câu ngắn
+tệ,tiêu_cực,câu ngắn
+so so,trung_tính,câu ngắn
+cũng được,trung_tính,câu ngắn
+bình thường,trung_tính,câu ngắn
+không ưng,tiêu_cực,câu ngắn
+ngon,tích_cực,câu ngắn
+trung bình,trung_tính,câu ngắn
+ok nha,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+chán,tiêu_cực,câu ngắn
+ưng,tích_cực,câu ngắn
+trung bình,trung_tính,câu ngắn
+một sao,tiêu_cực,câu ngắn
+tệ,tiêu_cực,câu ngắn
+một sao,tiêu_cực,câu ngắn
+một sao,tiêu_cực,câu ngắn
+ngon,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+không ưng,tiêu_cực,câu ngắn
+trung bình,trung_tính,câu ngắn
+trung bình,trung_tính,câu ngắn
+không ưng,tiêu_cực,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+tệ,tiêu_cực,câu ngắn
+một sao,tiêu_cực,câu ngắn
+ngon,tích_cực,câu ngắn
+tệ,tiêu_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+không ưng,tiêu_cực,câu ngắn
+bình thường,trung_tính,câu ngắn
+dở,tiêu_cực,câu ngắn
+cũng được,trung_tính,câu ngắn
+tạm,trung_tính,câu ngắn
+bình thường,trung_tính,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+tạm,trung_tính,câu ngắn
+bình thường,trung_tính,câu ngắn
+bình thường,trung_tính,câu ngắn
+khỏi quay lại,tiêu_cực,câu ngắn
+bình thường,trung_tính,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+so so,trung_tính,câu ngắn
+cũng được,trung_tính,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+dở,tiêu_cực,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+khỏi quay lại,tiêu_cực,câu ngắn
+bình thường,trung_tính,câu ngắn
+ưng,tích_cực,câu ngắn
+quá ổn,tích_cực,câu ngắn
+so so,trung_tính,câu ngắn
+chán,tiêu_cực,câu ngắn
+10 điểm,tích_cực,câu ngắn
+10 điểm,tích_cực,câu ngắn
+sẽ quay lại,tích_cực,câu ngắn
+ok nha,tích_cực,câu ngắn
+ngon,tích_cực,câu ngắn
+tệ,tiêu_cực,câu ngắn
+mức giá  à chất lưng coi như hòa,trung_tính,sai chính tả
+ngồ cả buổi mà vẫn thấy thoải mái,tích_cực,sai chính tả
+giá này mđà ược chừng này thì quá hời,tích_cực,sai chính tả
+bạn è mình ai ăn cũng gậ gù,tích_cực,sai chính tả
+nhân viên vừa nghh điện htoại vừa bưng bê,tiêu_cực,sai chính tả
+"chủ  uán nhớ mặt khách, chào hỏi thân tììh",tích_cực,sai chính tả
+lần th ba mnh quay lại và vẫn ổn,tích_cực,sai chính tả
+đợi gần bốn mươi hpút mới có ồ ăn,tiêu_cực,sai chính tả
+không dở nhưng cũng  hưa tới mmc muốn giới thiệu,trung_tính,sai chính tả
+"được ciá tiện đờưng, còn lại thì trung bình",trung_tính,sai chính tả
+nggi cả buổi mà vẫn tấhy thoải mái,tích_cực,sai chính tả
+bàn còn dínhd ầu mỡ của kkách trước,tiêu_cực,sai chính tả
+bình tường như bao quán kác trong khu,trung_tính,sai chính tả
+"lần trướ òn được, lần này xuống dốc hẳn",tiêu_cực,sai chính tả
+bình thưnờg như bao quán khác trong ku,trung_tính,sai chính tả
+không dở nhưng ũng chưa tới mứứ muốn giới thiệu,trung_tính,sai chính tả
+"được cáiitiện đường, còn lại thì trungbình",trung_tính,sai chính tả
+bình htường như bao quán khhc trong khu,trung_tính,sai chính tả
+lần thứ bb mình quay lại và vẫnổ n,tích_cực,sai chính tả
+ăn xong còn muốn  ọiithêm phần nữa,tích_cực,sai chính tả
+ăn xoog về bbng khó chịu cả tối,tiêu_cực,sai chính tả
+tính tiền cao hơn iá  iêm yết trên menu,tiêu_cực,sai chính tả
+"rau sống ươi rói, sạch sẽ",tích_cực,sai chính tả
+phần ăn tee tóp so với ảnh qảung cáo,tiêu_cực,sai chính tả
+được áci tiện đườngg còn lại thì trung bình,trung_tính,sai chính tả
+gi ọmãi không ai ra ghi món,tiêu_cực,sai chính tả
+"thịt dai hách, nhai kông nổi",tiêu_cực,sai chính tả
+mùi dầu chiên  i chiên lại rtấ gắt,tiêu_cực,sai chính tả
+gọi mãi không ia ra gh imón,tiêu_cực,sai chính tả
+mùi dầu chiên đi chinê lạạ rất gắt,tiêu_cực,sai chính tả
+phần ănteo tóp so vớớ ảnh quảng cáo,tiêu_cực,sai chính tả
+bình thường như baa quán khcá trong khu,trung_tính,sai chính tả
+phần ăn teo tóp s ovới ảnh quảng áco,tiêu_cực,sai chính tả
+ngồi c buổi mà vẫ nthấy thoải mái,tích_cực,sai chính tả
+bạn è mình ai nă cũng gật gù,tích_cực,sai chính tả
+không dở nhưng ũng chưư tới mức muốn giới thiệu,trung_tính,sai chính tả
+"rau sốnggtưiơ rói, sạch sẽ",tích_cực,sai chính tả
+giá này mà được chhng nny thì quá hời,tích_cực,sai chính tả
+"chỗ để xe khg có, phải gửi xa",tiêu_cực,sai chính tả
+mùi dầu chiên đi chiênlạiirất gắt,tiêu_cực,sai chính tả
+nnồi cả buổi mà vẫn thấy toải mái,tích_cực,sai chính tả
+rau sống tươi rói ssch sẽ,tích_cực,sai chính tả
+nhân viên vừa nghe điện tohại va bưng bê,tiêu_cực,sai chính tả
+"ăn được, không cóg ì để chh mà cũng không có gì nổi bật",trung_tính,sai chính tả
+mức giá vv chất lượng coi như hha,trung_tính,sai chính tả
+đáng để cạy xeexa một chút,tích_cực,sai chính tả
+"thất vọng, chắc không quaa ạli nữa",tiêu_cực,sai chính tả
+"tôôđầy đặn, ăn no ccng bụng",tích_cực,sai chính tả
+"đồ ăn ra nahn, nóng hổi",tích_cực,sai chính tả
+"ra sống tươi rói ,sạch sẽ",tích_cực,sai chính tả
+"đồồăn ra nhanh,n óng hổi",tích_cực,sai chính tả
+mức giá và chất llợng coi hnư hòa,trung_tính,sai chính tả
+phần ăn teo tóp so với ảnh qqảgn cáo,tiêu_cực,sai chính tả
+áđng để chạyxe xa một chút,tích_cực,sai chính tả
+"tôđ ầy đặn, ăn no căăg bụng",tích_cực,sai chính tả
+mùù  ầu chiên đi chiên lại rất gắt,tiêu_cực,sai chính tả
+ăn xon gvề bụng kóh chịu cả tối,tiêu_cực,sai chính tả
+"ăn được, khônggcó gì để chê màcũng không có gì nổi bật",trung_tính,sai chính tả
+"chỗ ểđ xe không có, phảig ửi xa",tiêu_cực,sai chính tả
+"thất vọng, chắc khôn quay lạ inữa",tiêu_cực,sai chính tả
+phần ănteo tóp so vớ ảnh quảng cáo,tiêu_cực,sai chính tả
+"đồ ăn ra nhan,h nóngh ổi",tích_cực,sai chính tả
+tính tiền cao hơn giá nim yết trên emnu,tiêu_cực,sai chính tả
+lần thứ ba mình qqy lại và vẫn ổn,tích_cực,sai chính tả
+"ăn được, không có gìđ ể chê mà cũng không có gì nổi ật",trung_tính,sai chính tả
+mức giá và chất lượngc oi như hha,trung_tính,sai chính tả
+"thất vọng, ccắc khnôg quay lại nữa",tiêu_cực,sai chính tả
+không dở nhưng cũng chưa tới mứứ munố giới thiệu,trung_tính,sai chính tả
+"được cái tiện đường,,còn lạạ thì trung bình",trung_tính,sai chính tả
+"được cái tiện đường,còn lại thì trungbình",trung_tính,sai chính tả
+"lần trớưc cnò được, lần này xuống dốc hẳn",tiêu_cực,sai chính tả
+nhân viên vừa nnhe điện htoại vừa bưng bê,tiêu_cực,sai chính tả
+giá này mà đượ hcừng này thì quá hời,tích_cực,sai chính tả
+tạm ổn cho một  ữa trưavội,trung_tính,sai chính tả
+"được cái tiện đườn,g còn lại thì trung bìh",trung_tính,sai chính tả
+"nướcc hấmmpha khéo, điểm cộng lớn",tích_cực,sai chính tả
+"rau ống tươi rói, sạc hsẽ",tích_cực,sai chính tả
+tạmổn cho một bữat rưa vội,trung_tính,sai chính tả
+lần thứ ba mình quay lại v vẫn ổn,tích_cực,sai chính tả
+đợi gầ nbốn mươi púht mới có đồ ăn,tiêu_cực,sai chính tả

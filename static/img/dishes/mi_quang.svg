@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Ảnh minh hoạ món Mì Quảng">
+  <title>Ảnh minh hoạ món Mì Quảng</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3DFD2"/>
+      <stop offset="100%" stop-color="#D9A98C"/>
+    </linearGradient>
+    <pattern id="p" width="56" height="56" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="2.4" fill="#ffffff" opacity=".40"/>
+      <circle cx="42" cy="42" r="1.6" fill="#1b2b24" opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="320" fill="url(#g)"/>
+  <rect width="480" height="320" fill="url(#p)"/>
+  <circle cx="240" cy="142" r="86" fill="#ffffff" opacity=".55"/>
+  <circle cx="240" cy="142" r="86" fill="none" stroke="#1b2b24" stroke-opacity=".10" stroke-width="2"/>
+  <text x="240" y="142" font-size="88" text-anchor="middle" dominant-baseline="central">🍜</text>
+  <rect x="0" y="252" width="480" height="68" fill="#16241E" opacity=".80"/>
+  <text x="28" y="288" fill="#F6F8F4" font-size="28" font-weight="700"
+        font-family="'Be Vietnam Pro',system-ui,'Segoe UI',sans-serif">Mì Quảng</text>
+  <text x="452" y="288" fill="#F6F8F4" opacity=".70" font-size="16" text-anchor="end"
+        font-family="'Be Vietnam Pro',system-ui,'Segoe UI',sans-serif">Bún – Phở</text>
+</svg>
